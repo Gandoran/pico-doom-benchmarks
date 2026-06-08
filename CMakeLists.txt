@@ -35,7 +35,11 @@ pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(pico-doom-benchmarks pico-doom-benchmarks.c )
+add_executable(pico-doom-benchmarks
+                pico-doom-benchmarks.c
+                src/cpu/fixed_float.c
+                src/cpu/cpu_fixed.c
+                src/cpu/cpu_float.c )
 
 pico_set_program_name(pico-doom-benchmarks "pico-doom-benchmarks")
 pico_set_program_version(pico-doom-benchmarks "0.1")
