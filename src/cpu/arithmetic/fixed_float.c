@@ -1,6 +1,6 @@
 #include "fixed_float.h"
 
-void RunBenchmark(){
+void RunArithBenchmark(){
     RunFixedMul();
     RunFloatMul();
     RunFixedDiv();

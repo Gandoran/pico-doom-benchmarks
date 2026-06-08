@@ -16,7 +16,7 @@
 
 #define NUMBERTEST 1000
 
-void RunBenchmark();
+void RunArithBenchmark();
 void RunFixedMul();
 void RunFloatMul();
 void RunFixedDiv();
