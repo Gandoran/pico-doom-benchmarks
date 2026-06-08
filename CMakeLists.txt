@@ -46,7 +46,7 @@ pico_set_program_version(pico-doom-benchmarks "0.1")
 
 # Modify the below lines to enable/disable output over UART/USB
 pico_enable_stdio_uart(pico-doom-benchmarks 0)
-pico_enable_stdio_usb(pico-doom-benchmarks 0)
+pico_enable_stdio_usb(pico-doom-benchmarks 1)
 
 # Add the standard library to the build
 target_link_libraries(pico-doom-benchmarks
