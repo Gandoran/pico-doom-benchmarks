@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include "hardware/timer.h"
 
+#include "src/cpu/arithmetic/cpu_fixed.h"
+
 #include "cpu_math.h"
 #include "cpu_lut.h"
 
@@ -11,14 +13,25 @@
 
 #define RADIANT_NUM     2.5f
 
-//conversion double to BAM
-#define BAM_NUM  ((RADIANT_NUM * 180) / PI) / 360 * 8192
+//conversion double to BAM with a parametric macro
+#define RAD_TO_BAM(rad)  (angle_bam)((rad) * (8192.0f / (2.0f * PI)))
 
 #define TRIGTEST 1000
 
+void InitializeAngles();
+
 void RunTrigBenchmark();
-void RunSin();
-void RunTan();
-void RunATan();
+
+unsigned long RunSinLut();
+unsigned long RunTanLut();
+unsigned long RunATanLut();
+
+unsigned long RunSinMath();
+unsigned long RunTanMath();
+unsigned long RunATanMath();
+
+double CalculateDifferences(double *math_array, n_fixed *lut_array);
+
+void ReportResult(const char* test_name, unsigned long delta_lut, unsigned long delta_math, double error);
 
 #endif

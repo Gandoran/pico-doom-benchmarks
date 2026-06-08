@@ -1,4 +1,4 @@
-#include "fixed.h"
+#include "src/cpu/arithmetic/cpu_fixed.h"
 
 #ifndef _CPU_LUT_
 #define _CPU_LUT_

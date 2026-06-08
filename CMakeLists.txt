@@ -37,9 +37,12 @@ pico_sdk_init()
 
 add_executable(pico-doom-benchmarks
                 pico-doom-benchmarks.c
-                src/cpu/fixed_float.c
-                src/cpu/cpu_fixed.c
-                src/cpu/cpu_float.c )
+                src/cpu/arithmetic/fixed_float.c
+                src/cpu/arithmetic/cpu_float.c
+                src/cpu/arithmetic/cpu_fixed.c
+                src/cpu/trigonometric/cpu_lut.c
+                src/cpu/trigonometric/cpu_math.c
+                src/cpu/trigonometric/lut_math.c )
 
 pico_set_program_name(pico-doom-benchmarks "pico-doom-benchmarks")
 pico_set_program_version(pico-doom-benchmarks "0.1")
