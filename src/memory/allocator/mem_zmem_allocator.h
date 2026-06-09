@@ -3,21 +3,25 @@
 
 #include "allocator.h"
 
-typedef struct mem_zone{
-    int		size;
-    mem_block	blocklist;
-    mem_block*	rover;   
-}mem_zone;
+#define PURGE_LEVEL 100
+#define PU_STATIC 1
+#define PU_FREE 0
+#define PU_CACHE 100
 
 typedef struct mem_block{
     int			size;
     void**		user;
     int			tag;
-    int			id;
 
     struct mem_block*	next;
     struct mem_block*	prev;
 }mem_block;
+
+typedef struct mem_zone{
+    int		size;
+    mem_block	blocklist;
+    mem_block*	rover;   
+}mem_zone;
 
 allocator CreateZMemAllocator();
 
