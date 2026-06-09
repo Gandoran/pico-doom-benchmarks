@@ -49,7 +49,10 @@ add_executable(pico-doom-benchmarks
                 src/cpu/sorting/map_creation.c
                 
                 src/memory/allocator/mem_std_allocator.c
-                src/memory/allocator/mem_zmem_allocator.c)
+                src/memory/allocator/mem_zmem_allocator.c
+                
+                src/memory/fileSystem/mem_hash_table.c
+                src/memory/fileSystem/mem_linear_wad.c)
 
 pico_set_program_name(pico-doom-benchmarks "pico-doom-benchmarks")
 pico_set_program_version(pico-doom-benchmarks "0.1")

@@ -22,6 +22,6 @@ void RunFloatMul();
 void RunFixedDiv();
 void RunFloatDiv();
 
-void ReportResult(const char* test_name, unsigned long start, unsigned long end, long long acc);
+void ReportArithResult(const char* test_name, unsigned long start, unsigned long end, long long acc);
 
 #endif

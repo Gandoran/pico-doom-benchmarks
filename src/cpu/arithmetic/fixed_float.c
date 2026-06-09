@@ -14,7 +14,7 @@ void RunFixedMul(){
         acc += FixedMul(FIXED_FIRST_NUM,FIXED_SECOND_NUM);
     }
     unsigned long end = time_us_32();
-    ReportResult("Fixed Point Moltiplication",start,end,acc>>16);
+    ReportArithResult("Fixed Point Moltiplication",start,end,acc>>16);
 }
 
 void RunFloatMul(){
@@ -24,7 +24,7 @@ void RunFloatMul(){
         acc += FloatMul(FLOAT_FIRST_NUM,FLOAT_SECOND_NUM);
     }
     unsigned long end = time_us_32();
-    ReportResult("Floating Point Moltiplication",start,end,acc);
+    ReportArithResult("Floating Point Moltiplication",start,end,acc);
 }
 
 void RunFixedDiv(){
@@ -34,7 +34,7 @@ void RunFixedDiv(){
         acc += FixedDiv(FIXED_FIRST_NUM,FIXED_SECOND_NUM);
     }
     unsigned long end = time_us_32();
-    ReportResult("Fixed Point Division",start,end,acc>>16);
+    ReportArithResult("Fixed Point Division",start,end,acc>>16);
 }
 
 void RunFloatDiv(){
@@ -44,11 +44,11 @@ void RunFloatDiv(){
         acc += FloatDiv(FLOAT_FIRST_NUM,FLOAT_SECOND_NUM);
     }
     unsigned long end = time_us_32();
-    ReportResult("Floating Point Division",start,end, (long long) acc);
+    ReportArithResult("Floating Point Division",start,end, (long long) acc);
 }
 
 
-void ReportResult(const char* test_name, unsigned long start, unsigned long end, long long acc) {
+void ReportArithResult(const char* test_name, unsigned long start, unsigned long end, long long acc) {
     unsigned long delta = end - start;
     printf("Test: %s | Time spent: %lu us | Acc: %lli\n", test_name, delta, acc);
 }

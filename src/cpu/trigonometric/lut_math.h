@@ -32,6 +32,6 @@ unsigned long RunATanMath();
 
 double CalculateDifferences(double *math_array, n_fixed *lut_array);
 
-void ReportResult(const char* test_name, unsigned long delta_lut, unsigned long delta_math, double error);
+void ReportLutResult(const char* test_name, unsigned long delta_lut, unsigned long delta_math, double error);
 
 #endif

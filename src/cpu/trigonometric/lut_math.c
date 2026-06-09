@@ -15,11 +15,11 @@ static n_fixed lut_atan_results[TRIGTEST];
 void RunTrigBenchmark(){
     InitializeAngles();
     
-    ReportResult("Sin", RunSinLut(), RunSinMath() ,CalculateDifferences(math_sin_results, lut_sin_results));
+    ReportLutResult("Sin", RunSinLut(), RunSinMath() ,CalculateDifferences(math_sin_results, lut_sin_results));
     
-    ReportResult("Tan", RunTanLut(), RunTanMath() ,CalculateDifferences(math_tan_results, lut_tan_results));
+    ReportLutResult("Tan", RunTanLut(), RunTanMath() ,CalculateDifferences(math_tan_results, lut_tan_results));
     
-    ReportResult("Arc Tan", RunATanLut(), RunATanMath(), CalculateDifferences(math_atan_results, lut_atan_results));
+    ReportLutResult("Arc Tan", RunATanLut(), RunATanMath(), CalculateDifferences(math_atan_results, lut_atan_results));
 }
 
 unsigned long RunSinLut(){
@@ -93,6 +93,6 @@ double CalculateDifferences(double *math_array, n_fixed *lut_array){
     return (total_error / TRIGTEST);
 }
 
-void ReportResult(const char* test_name, unsigned long delta_lut, unsigned long delta_math, double error) {
+void ReportLutResult(const char* test_name, unsigned long delta_lut, unsigned long delta_math, double error) {
     printf("Test: %s | Time spent with Lut: %lu us | Time spent with math: %lu us | Error: %g \n", test_name, delta_lut, delta_math, error);
 }
