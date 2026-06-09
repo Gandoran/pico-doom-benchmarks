@@ -6,6 +6,6 @@
 
 #include "geometry.h"
 
-void RunQuickSort(Point2D robot_pos, Wall* walls, int wall_count);
+void QuickSort(Point2D item_pos, Wall* walls, int wall_count);
 
 #endif
