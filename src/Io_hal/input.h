@@ -3,16 +3,16 @@
 
 #include "hal.h"
 
-typedef struct event{
+typedef struct Event{
     int event_type;
     int id;
-}event;
+}Event;
 
-typedef struct i_input{
+typedef struct I_Input{
     void* context;
-    void (*init) (void* context, i_hal* hal);
+    void (*init) (void* context, I_Hal* hal);
     void (*update) (void* context);
-    int (*pop_event) (void* context, event* out_event);
-}i_input;
+    int (*pop_event) (void* context, Event* out_event);
+}I_Input;
 
 #endif

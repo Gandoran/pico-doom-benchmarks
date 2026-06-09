@@ -83,8 +83,8 @@ static void ZMemFree(void* context, void* block_ptr){
     MergeWithPrev(free_block);
 }
 
-allocator CreateZMemAllocator(){
-    return (allocator){
+Allocator CreateZMemAllocator(){
+    return (Allocator){
         .context = &main_zone,
         .init = ZMemInit,
         .alloc = ZMemMalloc,

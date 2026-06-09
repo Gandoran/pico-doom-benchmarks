@@ -1,14 +1,14 @@
 #include "hal_pico_sdk.h"
 
-static hal_context pico_hw_state;
+static HalContext pico_hw_state;
 
 static uint32_t PicoReadHardware(void* context){
-    hal_context* hw_context = (hal_context*) context;
+    HalContext* hw_context = (HalContext*) context;
     return hw_context->virtual_pins;
 }
 
-i_hal CreatePicoHal(){
-    return (i_hal){
+I_Hal CreatePicoHal(){
+    return (I_Hal){
         .context = &pico_hw_state,
         .read_hardware_state = PicoReadHardware,
     };

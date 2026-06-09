@@ -3,11 +3,11 @@
 
 #include "hal.h"
 
-typedef struct hal_context{
+typedef struct HalContext{
     uint32_t virtual_pins;
-}hal_context;
+}HalContext;
 
-i_hal CreatePicoHal();
+I_Hal CreatePicoHal();
 
 void HAL_SimulateButtonPress(uint32_t button_mask);
 

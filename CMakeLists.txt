@@ -53,7 +53,11 @@ add_executable(pico-doom-benchmarks
                 
                 src/memory/fileSystem/mem_hash_table.c
                 src/memory/fileSystem/mem_linear_wad.c
-                src/memory/fileSystem/file_system_benchmark.c)
+                src/memory/fileSystem/file_system_benchmark.c
+                
+                src/io_hal/hal_pico_sdk.c
+                src/io_hal/input_event_queue.c
+                src/io_hal/input_polling.c)
 
 pico_set_program_name(pico-doom-benchmarks "pico-doom-benchmarks")
 pico_set_program_version(pico-doom-benchmarks "0.1")

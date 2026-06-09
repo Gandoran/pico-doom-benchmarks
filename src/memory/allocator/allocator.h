@@ -4,7 +4,7 @@
 //for size_t use
 #include <stddef.h>
 
-typedef struct allocator{
+typedef struct Allocator{
     void* context;
     //init
     void (*init)(void* context, size_t total_size);
@@ -12,7 +12,7 @@ typedef struct allocator{
     void* (*alloc)(void* context, size_t size);
     //free
     void (*free_mem)(void* context, void* block_ptr);
-}allocator;
+}Allocator;
 
 void* AllocMalloc(size_t dimension);
 void  AllocFree(void* block_ptr);

@@ -3,9 +3,9 @@
 
 #include <stdint.h>
 
-typedef struct i_hal{
+typedef struct I_Hal{
     void* context;
     uint32_t (*read_hardware_state)(void* context);
-}i_hal;
+}I_Hal;
 
 #endif

@@ -4,6 +4,6 @@
 #include "allocator.h"
 #include <stdlib.h>
 
-allocator CreateStdAllocator();
+Allocator CreateStdAllocator();
 
 #endif  

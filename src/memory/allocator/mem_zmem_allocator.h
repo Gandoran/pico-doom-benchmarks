@@ -23,6 +23,6 @@ typedef struct mem_zone{
     mem_block*	rover;   
 }mem_zone;
 
-allocator CreateZMemAllocator();
+Allocator CreateZMemAllocator();
 
 #endif

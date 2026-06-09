@@ -10,8 +10,8 @@ static void StdFree(void* context, void* block_ptr){
     free(block_ptr);
 }
 
-allocator CreateStdAllocator(){
-    return (allocator){
+Allocator CreateStdAllocator(){
+    return (Allocator){
         .context = NULL,
         .init = StdInit,
         .alloc = StdMalloc,
