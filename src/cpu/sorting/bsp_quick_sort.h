@@ -20,6 +20,6 @@ void RunSortingBenchmark();
 void RunQuickSort();
 void RunBspSort();
 
-void ReportSortingResult(const char* test_name, unsigned long start, unsigned long end) ;
+void ReportSortingResult(const char* test_name, unsigned long start, unsigned long end);
 
 #endif

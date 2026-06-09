@@ -52,7 +52,8 @@ add_executable(pico-doom-benchmarks
                 src/memory/allocator/mem_zmem_allocator.c
                 
                 src/memory/fileSystem/mem_hash_table.c
-                src/memory/fileSystem/mem_linear_wad.c)
+                src/memory/fileSystem/mem_linear_wad.c
+                src/memory/fileSystem/file_system_benchmark.c)
 
 pico_set_program_name(pico-doom-benchmarks "pico-doom-benchmarks")
 pico_set_program_version(pico-doom-benchmarks "0.1")

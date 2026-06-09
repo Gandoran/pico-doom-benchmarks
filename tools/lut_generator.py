@@ -1,4 +1,9 @@
 import math
+from pathlib import Path
+
+SCRIPT_DIR = Path(__file__).parent
+
+OUTPUT_FILE = SCRIPT_DIR.parent / "src" / "cpu" / "trigonometric" / "cpu_lut.c"
 
 SinArray = []
 TanArray = []
@@ -27,7 +32,7 @@ for i in range (0,8192):
     ATanArray.append(math.atan(rad))
 
 
-with open("src/cpu/airthmetic/cpu_lut.c","w") as f:
+with open(OUTPUT_FILE, "w") as f:
     f.write('#include "cpu_lut.h"\n\n')
 
     f.write('const n_fixed sin_table[8192] ={\n')
