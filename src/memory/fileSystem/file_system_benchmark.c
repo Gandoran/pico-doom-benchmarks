@@ -2,7 +2,7 @@
 
 static uint32_t ExecuteSearchWorkload(wad* engine){
     uint32_t start = time_us_32();
-    for(int i = 0; i < FILESYSTEMTEST; i++){
+    for(int i = 0; i < FILESYSTEM_TEST; i++){
         for(int k = 0; k < TOTAL_QUERIES; k++ ){
             engine->find_lump(engine->context,virtual_wad_directory,TOTAL_LUMPS,search_queries[k]);
         }
@@ -12,7 +12,7 @@ static uint32_t ExecuteSearchWorkload(wad* engine){
 }
 
 static void ReportSortingResult(const char* test_name, uint32_t delta, size_t memory_usage){
-    printf("Test: %s | Time spent: %lu us\n | Memory Used: %zu ", test_name, delta, memory_usage);
+    printf("Test: %s | Time spent: %lu us | Memory Used: %zu \n", test_name, delta, memory_usage);
 }
 
 void RunFileSystemBenchmark(){

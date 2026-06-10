@@ -65,7 +65,7 @@ static void* ZMemMalloc(void* context, size_t size){
             mal_rover->tag = PU_STATIC;
             main_zone.rover = mal_rover->next;
 
-            main_zone.rover = mal_rover->next;
+            return (void*)(mal_rover + 1);
         }
     }while(mal_rover != start);
 

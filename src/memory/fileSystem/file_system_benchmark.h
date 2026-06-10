@@ -9,7 +9,7 @@
 
 #include "wad_benchmark_data.h"
 
-#define FILESYSTEMTEST 1000
+#define FILESYSTEM_TEST 1000
 
 void RunFileSystemBenchmark();
 
