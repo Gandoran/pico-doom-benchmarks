@@ -37,16 +37,19 @@ pico_sdk_init()
 
 add_executable(pico-doom-benchmarks
                 pico-doom-benchmarks.c
-                src/cpu/arithmetic/fixed_float.c
+
+                src/cpu/arithmetic/arithmetic_benchmark.c
                 src/cpu/arithmetic/cpu_float.c
                 src/cpu/arithmetic/cpu_fixed.c
+
                 src/cpu/trigonometric/cpu_lut.c
                 src/cpu/trigonometric/cpu_math.c
-                src/cpu/trigonometric/lut_math.c
+                src/cpu/trigonometric/trigonometric_benchmark.c
+
                 src/cpu/sorting/cpu_quick_sort.c
                 src/cpu/sorting/cpu_bsp.c 
-                src/cpu/sorting/bsp_quick_sort.c
                 src/cpu/sorting/map_creation.c
+                src/cpu/sorting/sorting_benchmark.c
                 
                 src/memory/allocator/mem_std_allocator.c
                 src/memory/allocator/mem_zmem_allocator.c

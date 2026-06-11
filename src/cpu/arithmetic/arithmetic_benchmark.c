@@ -1,13 +1,12 @@
-#include "fixed_float.h"
+#include "arithmetic_benchmark.h"
 
-void RunArithBenchmark(){
-    RunFixedMul();
-    RunFloatMul();
-    RunFixedDiv();
-    RunFloatDiv();
+static void ReportArithResult(const char* test_name, unsigned long start, unsigned long end, long long acc) {
+    unsigned long delta = end - start;
+    printf("Test: %s | Time spent: %lu us | Acc: %lli\n", test_name, delta, acc);
 }
 
-void RunFixedMul(){
+
+static int RunFixedMul(){
     long long acc=0;
     unsigned long start = time_us_32();
     for(int i=0;i<NUMBERTEST;i++){
@@ -17,7 +16,7 @@ void RunFixedMul(){
     ReportArithResult("Fixed Point Moltiplication",start,end,acc>>16);
 }
 
-void RunFloatMul(){
+static void RunFloatMul(){
     long long acc=0;
     unsigned long start = time_us_32();
     for(int i=0;i<NUMBERTEST;i++){
@@ -27,7 +26,7 @@ void RunFloatMul(){
     ReportArithResult("Floating Point Moltiplication",start,end,acc);
 }
 
-void RunFixedDiv(){
+static void RunFixedDiv(){
     long long acc=0;
     unsigned long start = time_us_32();
     for(int i=0;i<NUMBERTEST;i++){
@@ -37,7 +36,7 @@ void RunFixedDiv(){
     ReportArithResult("Fixed Point Division",start,end,acc>>16);
 }
 
-void RunFloatDiv(){
+static void RunFloatDiv(){
     float acc=0.0f;
     unsigned long start = time_us_32();
     for(int i=0;i<NUMBERTEST;i++){
@@ -47,8 +46,9 @@ void RunFloatDiv(){
     ReportArithResult("Floating Point Division",start,end, (long long) acc);
 }
 
-
-void ReportArithResult(const char* test_name, unsigned long start, unsigned long end, long long acc) {
-    unsigned long delta = end - start;
-    printf("Test: %s | Time spent: %lu us | Acc: %lli\n", test_name, delta, acc);
+void RunArithBenchmark(){
+    RunFixedMul();
+    RunFloatMul();
+    RunFixedDiv();
+    RunFloatDiv();
 }

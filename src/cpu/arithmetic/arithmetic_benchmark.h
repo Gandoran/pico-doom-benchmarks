@@ -17,11 +17,5 @@
 #define NUMBERTEST 1000
 
 void RunArithBenchmark();
-void RunFixedMul();
-void RunFloatMul();
-void RunFixedDiv();
-void RunFloatDiv();
-
-void ReportArithResult(const char* test_name, unsigned long start, unsigned long end, long long acc);
 
 #endif

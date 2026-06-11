@@ -18,20 +18,6 @@
 
 #define TRIGTEST 1000
 
-void InitializeAngles();
-
 void RunTrigBenchmark();
-
-unsigned long RunSinLut();
-unsigned long RunTanLut();
-unsigned long RunATanLut();
-
-unsigned long RunSinMath();
-unsigned long RunTanMath();
-unsigned long RunATanMath();
-
-double CalculateDifferences(double *math_array, n_fixed *lut_array);
-
-void ReportLutResult(const char* test_name, unsigned long delta_lut, unsigned long delta_math, double error);
 
 #endif
