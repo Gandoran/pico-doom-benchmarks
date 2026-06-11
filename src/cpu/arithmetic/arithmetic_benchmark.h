@@ -7,8 +7,8 @@
 #ifndef FIXED_FLOAT_
 #define FIXED_FLOAT_
 
-#define FLOAT_FIRST_NUM     2.5f
-#define FLOAT_SECOND_NUM    4.0f
+#define FLOAT_FIRST_NUM     256.0f    
+#define FLOAT_SECOND_NUM    256.0f
 
 //conversion floating point to fixed point
 #define FIXED_FIRST_NUM     (n_fixed)(FLOAT_FIRST_NUM * (1 << FRACBITS))

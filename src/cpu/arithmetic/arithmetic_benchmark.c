@@ -2,11 +2,12 @@
 
 static void ReportArithResult(const char* test_name, unsigned long start, unsigned long end, long long acc) {
     unsigned long delta = end - start;
-    printf("Test: %s | Time spent: %lu us | Acc: %lli\n", test_name, delta, acc);
+    printf("\nArithmetic Test: %s\n", test_name);
+    printf("  -> Time Spent: %lu us\n", delta);
+    printf("  -> Accuracy Level:  %lli \n", acc);
 }
 
-
-static int RunFixedMul(){
+static void RunFixedMul(){
     long long acc=0;
     unsigned long start = time_us_32();
     for(int i=0;i<NUMBERTEST;i++){
